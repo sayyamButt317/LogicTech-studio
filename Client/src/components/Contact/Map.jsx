@@ -24,9 +24,10 @@ const Map = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { name, value } = e.target;
     name =e.target.name;
     value=e.target.value;
-    setFormData({...formData, [name]: value }); 
+    setFormData({ ...formData, [name]: value });
     console.log('Form submitted:', formData);
     // Here you can perform further actions like sending data to a server
   };

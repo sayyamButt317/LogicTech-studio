@@ -15,7 +15,7 @@ const cards = [
 
 const Card = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 p-4">
+    <div className="flex flex-wrap justify-center items-center gap-4 p-4 border border-black">
       {cards.map((card, index) => (
         <div
           key={index}
