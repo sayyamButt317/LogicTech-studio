@@ -1,39 +1,28 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../model/form");
+const dotenv = require("dotenv");
 
+dotenv.config({path:'./config.env'});
 
-// //set a route for admin who can visit all routes
-// router.get("/admin/urls",restrictTo(["ADMIN"]),async (req,res) =>{
-//     const allurls = await URL.find({});
-//     return res.render("home",{
-//         urls :allurls,
-//     });
-// });
-
-// //set a routes for user and admin who can access normal pages
-// router.get("/",restrictTo["NORMAL","ADMIN"],async (req,res) =>{
-//     const allurls = await URL.find({createdBy:req.user._id});
-//     return res.render("home",{
-//         urls :allurls,
-//     });
-// });
-
-router.get("/signup",(req,res)=>{
-    return res.render("signup");
-});
-router.get("/login",(req,res)=>{
-    return res.render("login");
-});
-router.get("/about",(req,res)=>{
-    return res.render("about");
-});
-router.get("/contact",(req,res)=>{
-    return res.render("contact");
-});
-router.get("/services",(req,res)=>{
-    return res.render("services");
-});
-router.get("/",(req,res)=>{
+router.get("/", (req, res) => {
     return res.render("home");
+  });
+  router.get("/services", (req, res) => {
+    return res.render("services");
+  });
+router.get("/about", (req, res) => {
+  return res.render("about");
+});
+router.post("/contact", async (req, res) => {
+  const { username, email, location, phone, text } = req.body;
+  const newUser = await User.create({
+    username: username,
+    email: email,
+    location: location,
+    phone: phone,
+    text: text,
+  });
+  return res.render("/");
 });
 module.exports = router;

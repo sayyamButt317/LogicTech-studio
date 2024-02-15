@@ -25,5 +25,5 @@ const formSchema = new Schema({
     {timestamps:true},
 );
 
-const Form = model("form", formSchema);
+const Form = model("FORM", formSchema);
 module.exports = Form;
