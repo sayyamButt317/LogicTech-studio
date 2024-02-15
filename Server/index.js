@@ -5,7 +5,7 @@ const port = process.env.PORT;
 const cookiePaser = require("cookie-parser");
 const { connectToMongoDb } = require("./connection");
 const path = require("path");
-const USER = require("./model/formSchema");
+const USER = require("./Routes/staticroute");
 const RouteHandler = require("./Routes/staticroute");
 
 connectToMongoDb("mongodb://0.0.0.0:27017/LogiTech").then(() =>

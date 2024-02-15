@@ -3,16 +3,16 @@ const router = express.Router();
 const User = require("../model/form");
 const dotenv = require("dotenv");
 
-dotenv.config({path:'./config.env'});
+dotenv.config({ path: "./config.env" });
 
 router.get("/", (req, res) => {
-    return res.render("home");
-  });
-  router.get("/services", (req, res) => {
-    return res.render("services");
-  });
+  return res.send("home");
+});
+router.get("/services", (req, res) => {
+  return res.send("services");
+});
 router.get("/about", (req, res) => {
-  return res.render("about");
+  return res.send("about");
 });
 router.post("/contact", async (req, res) => {
   const { username, email, location, phone, text } = req.body;
