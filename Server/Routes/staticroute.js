@@ -23,6 +23,6 @@ router.post("/contact", async (req, res) => {
     phone: phone,
     text: text,
   });
-  return res.render("/");
+  return res.send("contact");
 });
 module.exports = router;

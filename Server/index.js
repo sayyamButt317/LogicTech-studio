@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const cookiePaser = require("cookie-parser");
 const { connectToMongoDb } = require("./connection");
 const path = require("path");
