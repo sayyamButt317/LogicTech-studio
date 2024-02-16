@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../model/form");
-const dotenv = require("dotenv");
 
-dotenv.config({ path: "./config.env" });
 
 router.get("/", (req, res) => {
   return res.send("home");
@@ -16,13 +14,9 @@ router.get("/about", (req, res) => {
 });
 router.post("/contact", async (req, res) => {
   const { username, email, location, phone, text } = req.body;
-  const newUser = await User.create({
-    username: username,
-    email: email,
-    location: location,
-    phone: phone,
-    text: text,
-  });
+  if(!username || !email || !location || !phone || !text) {
+     return
+    }
   return res.send("contact");
 });
 module.exports = router;

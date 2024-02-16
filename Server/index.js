@@ -4,8 +4,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 const cookiePaser = require("cookie-parser");
 const { connectToMongoDb } = require("./connection");
-const path = require("path");
-const USER = require("./Routes/staticroute");
 const RouteHandler = require("./Routes/staticroute");
 
 connectToMongoDb("mongodb://0.0.0.0:27017/LogiTech").then(() =>
@@ -26,6 +24,6 @@ app.use(cookiePaser());
 
 app.use("/", RouteHandler);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, process.env.IP || '0.0.0.0' );
   console.log(`Server is running on port ${port}`);
-});
+
