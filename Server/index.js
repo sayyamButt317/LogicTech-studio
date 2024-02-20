@@ -11,15 +11,6 @@ connectToMongoDb("mongodb://0.0.0.0:27017/LogiTech").then(() =>
   console.log("Mongo DB connected ")
 );
 
-// const DB = "mongodb+srv://sayyambutt317:fallrBw4ZaW@Logictech.mongodb.net/?retryWrites=true&w=majority";
-//   mongoose.connect(DB,{
-//     useNewUrlParser:true,
-//   useUnifiedTopology:true,
-//   }).then(()=>{
-//     console.log("DB connected")
-//   }).catch((err)=> {
-//     console.log(`no conection ${err}`)
-//   })
 app.use(cors);
 app.use(express.urlencoded({ extended: false }));
 app.use(cookiePaser());

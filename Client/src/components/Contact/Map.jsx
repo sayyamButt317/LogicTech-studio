@@ -32,10 +32,10 @@ const Map = () => {
           Accept: "application/json",
         },
       });
-      console.log("Form submitted:", res.data);
+      console.log("Form submitted:", error.response.data);
       window.alert("Success Submitted");
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error.response.data);
       window.alert("Error");
     }
   };
