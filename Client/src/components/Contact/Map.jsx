@@ -25,20 +25,23 @@ const Map = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form data:", formData); 
     try {
-      const res = await Axios.post("/", formData, {
+      const res = await Axios.post("http://localhost:5000/save-form", formData, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
       });
-      console.log("Form submitted:", error.response.data);
+      console.log("Form submitted:", res.data);
       window.alert("Success Submitted");
     } catch (error) {
       console.error("Error submitting form:", error.response.data);
       window.alert("Error");
     }
   };
+  
+  
 
   return (
     <>
