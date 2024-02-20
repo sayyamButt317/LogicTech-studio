@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Axios from 'axios'; 
+import React, { useState } from "react";
+import Axios from "axios";
 
 const formFields = [
   { id: "username", label: "User name" },
@@ -11,11 +11,11 @@ const formFields = [
 
 const Map = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    phone: '',
-    location: '',
-    text: ''
+    username: "",
+    email: "",
+    phone: "",
+    location: "",
+    text: "",
   });
 
   const handleChange = (e) => {
@@ -28,14 +28,14 @@ const Map = () => {
     try {
       const res = await Axios.post("/", formData, {
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
       });
-      console.log('Form submitted:', res.data);
+      console.log("Form submitted:", res.data);
       window.alert("Success Submitted");
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       window.alert("Error");
     }
   };
@@ -58,7 +58,10 @@ const Map = () => {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white shadow-md rounded ml-10 px-8 pt-6 pb-8 mb-4 mt-5 sm:ml-auto">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-lg bg-white shadow-md rounded ml-10 px-8 pt-6 pb-8 mb-4 mt-5 sm:ml-auto"
+        >
           <h1 className="mb-5 text-xl font-bold">Get Your Response Today!</h1>
           <div className="container flex-col">
             {formFields.map((field, index) => (
@@ -69,12 +72,12 @@ const Map = () => {
                 >
                   {field.label}
                 </label>
-                {field.id === 'text' ? (
+                {field.id === "text" ? (
                   <textarea
                     id={field.id}
                     value={formData[field.id]}
                     onChange={handleChange}
-                    rows={5} 
+                    rows={5}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder={field.label}
                   />
@@ -90,8 +93,11 @@ const Map = () => {
                 )}
               </div>
             ))}
-            <div className="flex justify-center"> 
-              <button type="submit" className="w-full px-20 sm:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5 mb-5">
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="w-full px-20 sm:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5 mb-5"
+              >
                 Submit
               </button>
             </div>
