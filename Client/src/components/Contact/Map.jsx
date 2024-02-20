@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Axios from 'axios'; 
 
 const formFields = [
   { id: "username", label: "User name" },
@@ -22,34 +23,22 @@ const Map = () => {
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, value } = e.target;
-    name =e.target.name;
-    value=e.target.value;
-    setFormData({ ...formData, [name]: value });
-    console.log('Form submitted:', formData);
-    // Here you can perform further actions like sending data to a server
+    try {
+      const res = await Axios.post("/Form", formData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      });
+      console.log('Form submitted:', res.data);
+      window.alert("Success Submitted");
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      window.alert("Error");
+    }
   };
-  const PostData = async(e) => {
-e.preventDefault();
-const{username,email,location,phone,text} = formData;
-const res=await fetch("/Form",{
-  method:"POST",
-  headers:{
-    "Content-Type":"application/json"
-  },
-  body:JSON.stringify({username,email,location,phone,text})
-});
-const data = await res.json();
-if(data.status===200){
-  window.alert("Success Submitted");
-  console.log(data);
-} else{
-  window.alert("Error");
-
-}
-  }
 
   return (
     <>
@@ -69,7 +58,7 @@ if(data.status===200){
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} onClick={PostData} method='POST' className="w-full max-w-lg bg-white shadow-md rounded ml-10 px-8 pt-6 pb-8 mb-4 mt-5 sm:ml-auto">
+        <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white shadow-md rounded ml-10 px-8 pt-6 pb-8 mb-4 mt-5 sm:ml-auto">
           <h1 className="mb-5 text-xl font-bold">Get Your Response Today!</h1>
           <div className="container flex-col">
             {formFields.map((field, index) => (
@@ -85,7 +74,7 @@ if(data.status===200){
                     id={field.id}
                     value={formData[field.id]}
                     onChange={handleChange}
-                    rows={5} // Adjust the number of rows to increase height
+                    rows={5} 
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder={field.label}
                   />

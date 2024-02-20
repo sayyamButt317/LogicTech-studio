@@ -1,6 +1,5 @@
 import React from "react";
 import web from "../../assets/AppDevelopment.gif";
-import biometric from "../../assets/biometric.png";
 import Frontend from "../../assets/frontend.gif"
 import Desktop from "../../assets/Desktop.gif"
 import Game from "../../assets/game.gif"
