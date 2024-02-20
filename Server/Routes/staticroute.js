@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../model/form");
+// const Form require('../model/Form')
+
 
 
 router.get("/", (req, res) => {
@@ -12,11 +13,15 @@ router.get("/services", (req, res) => {
 router.get("/about", (req, res) => {
   return res.send("about");
 });
-router.post("/contact", async (req, res) => {
-  const { username, email, location, phone, text } = req.body;
-  if(!username || !email || !location || !phone || !text) {
-     return
-    }
-  return res.send("contact");
-});
+// router.post("/save-form", async (req, res) => {
+//   try {
+//     const { username, email, phone, location, text } = req.body;
+//     const newFormData = new Form({ username, email, phone, location, text });
+//     await newFormData.save();
+//     res.status(201).send("Form data saved successfully");
+//   } catch (err) {
+//     console.error("Error saving form data:", err);
+//     res.status(500).send("Error saving form data");
+//   }
+// });
 module.exports = router;
