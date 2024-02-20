@@ -26,7 +26,7 @@ const Map = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await Axios.post("/Form", formData, {
+      const res = await Axios.post("/", formData, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
