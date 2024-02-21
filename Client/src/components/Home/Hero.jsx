@@ -1,12 +1,7 @@
 import React from "react";
-import heroImg from "../../assets/hero.svg";
-import CountUp from "react-countup";
-import instagram from "../../assets/insta.png"
-import facebook from "../../assets/fb.png"
-import twitter from "../../assets/x.png"
-import linkedin from "../../assets/linkedin.png"
-
-
+import Socialicons from "./socialicons";
+import Sidebar from "./sidebar";
+import Personimage from "./personimage";
 
 const Hero = () => {
   return (
@@ -44,14 +39,6 @@ const Hero = () => {
                   <i class="ri-mail-line"></i>Email us
                 </button>
               </a>
-              {/*========== See Portfolio ==========*/}
-              {/* <a
-                href="#portfolio"
-                className="text-smallText font-[600] text-[16px] border-b border-solid border-smallTextColor"
-              >
-                See Portfolio
-              </a> */}
-              {/*========== Intro ParaGraph ==========*/}
             </div>
             <p
               data-aos="fade-left"
@@ -68,94 +55,13 @@ const Hero = () => {
               multiple due dates. Our user-friendly platform empowers you to
               take control of your expenses effortlessly.
             </p>
-            {/*========== Social Logos ==========*/}
-            <div className="flex items-center gap-8 mt-14">
-              <span className="text-smallTextColor text-[1nppx] font-[500]">
-              Get connected with us on social networks:
-              </span>
-              <span>
-                <a
-                  href="#linkedIn"
-                  className="text-smallTextColor text-[18px] font-[600]"
-                >
-                  
-                  <img src={linkedin} height="50" width="50" alt=""></img>
-                </a>
-              </span>
-              <span>
-                <a
-                  href="#Github"
-                  className="text-smallTextColor text-[18px] font-[600]"
-                >
-                 <img src={twitter} height="0" width="30" alt=""></img>
-                </a>
-              </span>
-              <span>
-                <a
-                  href="#Instagram"
-                  className="text-smallTextColor text-[18px] font-[600]"
-                >
-                  <img src={facebook} height="50" width="50" alt=""></img>
-                </a>
-              </span>
-              <span>
-                <a
-                  href="#Facebook"
-                  className="text-smallTextColor text-[18px] font-[600]"
-                >
-                <img src={instagram} height="50" width="50" alt=""></img>
-                </a>
-              </span>
-            
-            </div>
+
+            <Socialicons />
           </div>
-          {/*====================Hero Image=====================*/}
-          <div className="md-basis-1/3 mt-10 sm:mt-0">
-            <figure className="flex items-center justify-center">
-              <img src={heroImg} alt=""></img>
-            </figure>
-          </div>
-          {/*====================Hero Content=====================*/}
-          <div className="md:basis-1/5 flex justify-betwen text-center mt-10 flex-wrap gap-3 md:mt-0 md:flex-col md:justify-end md:text-end">
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={3800} duration={2} suffix="+"></CountUp>
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Active Users
-              </h4>
-            </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={100} duration={2} suffix="%"></CountUp>
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Success Rate
-              </h4>
-            </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={230} duration={2} suffix="+"></CountUp>
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Trusted Company
-              </h4>
-            </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp
-                  start={0}
-                  end={300}
-                  duration={2}
-                  prefix="$"
-                  suffix="M+"
-                ></CountUp>
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Transaction
-              </h4>
-            </div>
-          </div>
+
+          <Personimage />
+
+          <Sidebar />
         </div>
       </div>
     </section>

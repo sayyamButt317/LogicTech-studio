@@ -10,7 +10,7 @@ function ServiceList() {
     <div className="max-w-screen-md mx-auto">
     {services.map((service, index) => (
       <div key={index} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mt-3 mb-5">
-        <img src={service.image} className="max-w-full md:max-w-[200px] h-auto" alt="" /> {/* Adjust image width for mobile and desktop */}
+        <img src={service.image} className="max-w-full md:max-w-[200px] h-auto" alt="" />
         <div data-aos="fade-up" data-aos-duration="800" className="container">
           <h1 className="font-serif text-xl font-bold mb-3">{service.title}</h1>
           <p className="font-serif text-lg leading-relaxed text-justify">{service.description}</p>

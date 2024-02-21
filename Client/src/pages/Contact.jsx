@@ -1,11 +1,11 @@
 import React from 'react'
 import ContactPage from '../components/Contact/ContactPage'
-import Map from '../components/Contact/Map'
+import Form from '../components/Contact/ContactForm'
 const Contact =() => {
   return (
    <>
    <ContactPage/>
-   <Map/>
+   <Form/>
    
    </>
   )

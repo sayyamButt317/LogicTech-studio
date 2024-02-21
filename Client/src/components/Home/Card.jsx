@@ -14,11 +14,11 @@ const cards = [
 
 const Card = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 p-4 border border-black">
+    <div className="flex flex-wrap justify-center items-center gap-4 p-4 ">
       {cards.map((card, index) => (
         <div
           key={index}
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-duration={(index + 1) * 700}
           className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700"
         >
