@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-primaryColor text-center text-white dark:bg-primaryColor dark:text-neutral-200 lg:text-left mt-12">
+    <footer className="bg-black text-center text-white dark:bg-black dark:text-neutral-200 lg:text-left mt-12">
      
 
       <div className="mx-6 py-10 text-center md:text-left">
@@ -144,7 +144,7 @@ const Footer = () => {
       </div>
 
       {/*-- Copyright section --*/}
-      <div className="bg-primaryColor p-6 text-center dark:bg-primaryColor">
+      <div className="bg-primaryColor p-6 text-center dark:bg-black">
         <span>© 2023 Copyright:</span>
         <div 
           className="font-semibold text-neutral-600 dark:text-white"

@@ -23,7 +23,7 @@ const socialicons = () => {
             href={icon.href}
             className="text-smallTextColor text-[18px] font-[600]"
           >
-            <img src={icon.image} height="40" width="40" alt="" />
+            <img src={icon.image} height="50" width="50" alt="" />
           </a>
         </span>
       ))}

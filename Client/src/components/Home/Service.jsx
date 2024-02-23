@@ -7,22 +7,19 @@ const Service = () => {
         <div className="text-center">
           <h2 
             data-aos="fade-up"
-              data-aos-duration="400"
-              className="text-headingColor font-[800] text-[2.4rem] mb-5 ">
-          DRIVING YOUR DIGITAL TRANSFORMATION
+            data-aos-duration="400"
+            className="text-headingColor font-[800] text-3xl mb-5 sm:text-xl">
+            DRIVING YOUR DIGITAL TRANSFORMATION
           </h2>
-          <p  data-aos="fade-up"
-              data-aos-duration="600"
-               className="lg:max-w-[800px] lg:max-auto text-headingColor font-[500] text-[16px] leading-7">
-          We help enterprises through custom business solutions and provide IT outsourcing services to companies with agility, quality, and commitment.
+          <p  
+            data-aos="fade-up"
+            data-aos-duration="600"
+            className="lg:max-w-[800px] lg:max-auto text-headingColor font-[500] text-[16px] leading-7">
+            We help enterprises through custom business solutions and provide IT outsourcing services to companies with agility, quality, and commitment.
           </p>
         </div>
       </div>
-  
-
-
     </section>
-    
   );
 };
 

@@ -4,7 +4,6 @@ import Frontend from "../../assets/frontend.gif"
 import Desktop from "../../assets/Desktop.gif"
 import Game from "../../assets/game.gif"
 
-
 const cards = [
   { image: Frontend, title: "Web Development", description: "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver." },
   { image: web, title: "App Development", description: "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver." },

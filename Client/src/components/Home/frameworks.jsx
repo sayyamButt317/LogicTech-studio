@@ -15,27 +15,43 @@ import SQL from "../../assets/sql.svg";
 import Vue from "../../assets/vue.png";
 import Php from "../../assets/php.png";
 import Graph from "../../assets/graphql.png";
+import Ios from "../../assets/ios.png"
 
-function Frameworks() {
+const icons=[
+  {Image:Flutter ,width:100},
+  {Image:Kotlin ,width:100},
+  {Image:Ios ,width:50},
+  {Image:Angular,width:100},
+  {Image:Vue,width:50},
+  {Image:Next ,width:100},
+  {Image:react,width:100},
+  {Image:Node,width:100},
+  {Image:Dotnet ,width:50},
+  {Image:Django,width:50},
+  {Image:Mongodb,width:100},
+  {Image:Docker ,width:100},
+  {Image:AWS ,width:100},
+  {Image:Nginx ,width:100},
+  {Image:SQL ,width:100},
+  {Image:Php ,width:100},
+  {Image:Graph ,width:100},
+];
+
+const Frameworks = () => {
   return (
     <div className='md:container md:mx-auto'>
-      <div className='flex flex-wrap justify-center items-center gap-16 m-12'>
-        <img src={Flutter} className='max-w-[100px] h-auto' alt='' />
-        <img src={Kotlin} className='max-w-[100px] h-auto' alt='' />
-        <img src={Angular} className='max-w-[100px] h-auto' alt='' />
-        <img src={Vue} className='max-w-[50px] h-auto' alt='' />
-        <img src={Next} className='max-w-[100px] h-auto' alt='' />
-        <img src={react} className='max-w-[100px] h-auto' alt='' />
-        <img src={Node} className='max-w-[100px] h-auto' alt='' />
-        <img src={Dotnet} className='max-w-[50px] h-auto' alt='' />
-        <img src={Django} className='max-w-[50px] h-auto' alt='' />
-        <img src={Mongodb} className='max-w-[100px] h-auto' alt='' />
-        <img src={Docker} className='max-w-[100px] h-auto' alt='' />
-        <img src={AWS} className='max-w-[100px] h-auto' alt='' />
-        <img src={Nginx} className='max-w-[100px] h-auto' alt='' />
-        <img src={SQL} className='max-w-[100px] h-auto' alt='' />
-        <img src={Php} className='max-w-[100px] h-auto' alt='' />
-        <img src={Graph} className='max-w-[100px] h-auto' alt='' />
+      <span className='mt-5 text-[2rem] font-serif font-semibold flex items-center justify-center '>
+        We are Offering these Technologies 
+      </span>
+      <div 
+      className='flex flex-wrap justify-center items-center gap-16 m-12'>
+        {icons.map((icon,index) => (
+          <div key={index}
+          data-aos="fade-up"
+          data-aos-duration="400">
+            <img src={icon.Image} width={icon.width} className='h-auto' alt='' />
+          </div>
+        ))}
       </div>
     </div>
   );

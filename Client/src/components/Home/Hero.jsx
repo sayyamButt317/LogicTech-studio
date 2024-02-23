@@ -27,7 +27,7 @@ const Hero = () => {
             <h2 className="text-primaryColor font-sans md:font-serif text-[1.8rem] sm:text-[45px]">
               LogicTech Studio
             </h2>
-            {/*==========Hire ME Button ==========*/}
+            {/*==========Email ME Button ==========*/}
             <div
               data-aos="fade-up"
               data-aos-duration="1800"

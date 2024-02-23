@@ -2,9 +2,10 @@ import React from 'react'
 
 function mission() {
   return (
-    <div className='flex flex-row px-3'>
-        <div className='container'>
-        <h1 className="font-serif text-black text-xl font-bold mb-4 md:w-1/2 md:px-3 py-6">
+    <div 
+    data className='flex flex-row px-3'>
+        <div  data-aos="fade-up" data-aos-duration="1200" className='container'>
+        <h1  className="font-serif text-black text-xl font-bold mb-4 md:w-1/2 md:px-3 py-6">
           MISSION
         </h1>
       <div className="flex flex-row w-full h-auto md:max-md">
@@ -17,7 +18,7 @@ function mission() {
       </div>
       
         </div>
-        <div className='container'>
+        <div  data-aos="fade-up" data-aos-duration="1200" className='container'>
         <h1 className="font-serif text-black text-xl font-bold mb-4 md:w-1/2 md:px-3 py-6">
           Vision
         </h1>

@@ -2,7 +2,7 @@ import React from "react";
 
 function chooseus() {
   return (
-    <div className="w-full h-auto px-auto md:max-md  md:px-6 py-6">
+    <div  data-aos="fade-up" data-aos-duration="1200" className="w-full h-auto px-auto md:max-md  md:px-6 py-6">
       <h1 className="font-serif text-black text-xl font-bold mb-4 md:w-a/2 md:px-3 py-6">
         ABOUT US
       </h1>
