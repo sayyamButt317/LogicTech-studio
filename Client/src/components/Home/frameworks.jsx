@@ -39,7 +39,8 @@ const icons=[
 
 const Frameworks = () => {
   return (
-    <div className='md:container md:mx-auto'>
+    <div className='md:container md:mx-auto mt-10 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-100
+'>
       <span className='mt-5 text-[2rem] font-serif font-semibold flex items-center justify-center '>
         We are Offering these Technologies 
       </span>

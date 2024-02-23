@@ -2,7 +2,7 @@ import React from "react";
 import Socialicons from "./socialicons";
 import Sidebar from "./sidebar";
 import Personimage from "./personimage";
-
+import team from '../../assets/team.png';
 const Hero = () => {
   return (
     <section className="pt-0" id="about">
@@ -55,12 +55,9 @@ const Hero = () => {
               multiple due dates. Our user-friendly platform empowers you to
               take control of your expenses effortlessly.
             </p>
-
             <Socialicons />
           </div>
-
           <Personimage />
-
           <Sidebar />
         </div>
       </div>

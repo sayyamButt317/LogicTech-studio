@@ -13,7 +13,8 @@ const cards = [
 
 const Card = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 p-4 ">
+    <div className="flex flex-wrap justify-center items-center gap-4 p-4 
+    ">
       {cards.map((card, index) => (
         <div
           key={index}
@@ -21,7 +22,7 @@ const Card = () => {
           data-aos-duration={(index + 1) * 700}
           className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700"
         >
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
             <img src={card.image} height="100" width="100" alt="" />
           </div>
           <div className="px-5 pb-5">

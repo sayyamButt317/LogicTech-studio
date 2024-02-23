@@ -144,7 +144,7 @@ const Footer = () => {
       </div>
 
       {/*-- Copyright section --*/}
-      <div className="bg-primaryColor p-6 text-center dark:bg-black">
+      <div className="bg-black p-6 text-center dark:bg-black">
         <span>© 2023 Copyright:</span>
         <div 
           className="font-semibold text-neutral-600 dark:text-white"

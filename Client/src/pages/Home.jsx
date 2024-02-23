@@ -11,6 +11,7 @@ function Home() {
       <Service />
       <Card />
       <Framework />
+     
     </>
   );
 }
