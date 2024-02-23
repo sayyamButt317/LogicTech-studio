@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
- const Form = require('./model/Formmodel')
+const Form = require("./model/Formmodel");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,14 +14,21 @@ app.use(cookieParser());
 app.use(cors());
 
 // MongoDB connection
-const dbURL = "mongodb://localhost:27017/LogiTech";
+const dbURL =
+  "mongodb+srv://sayyambutt317:1234@logictech.bvyxt1p.mongodb.net/LogicTech";
+const connectDB = async () => {
+  await mongoose.connect(dbURL);
+  console.log(`Connect with MongoDB ${mongoose.connection.host}`);
+};
+connectDB();
+
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
-db.once("open", () => {
-  console.log("Connected to MongoDB",{dbURL});
-});
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// db.once("open", () => {
+//   console.log("Connected to MongoDB",{dbURL});
+// });
 
 // Routes
 app.post("/save-form", async (req, res) => {
