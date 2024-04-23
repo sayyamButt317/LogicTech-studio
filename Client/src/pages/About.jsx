@@ -2,14 +2,14 @@ import React from 'react'
 import AboutHero from '../components/About/AboutHero'
 import Aboutus from '../components/About/Aboutus'
 import Mission from '../components/About/mission'
-import Advancement from '../components/About/Advancement'
+import OwnerCard from '../components/About/owners'
 function About() {
   return (
 <>
     <AboutHero/>
     <Aboutus/>
     <Mission/>
-    <Advancement/>
+    <OwnerCard/>
 </>
   )
 }
