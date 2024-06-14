@@ -7,6 +7,7 @@ module.exports = {
         primaryColor: "#8873ef",
         headingColor: "#081e21",
         smallTextColor: "#193256",
+        logobgColor: "#581c87",
       
       },
       fontSize: {
