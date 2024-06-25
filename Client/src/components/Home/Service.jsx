@@ -15,8 +15,7 @@ const Service = () => {
           <p
             data-aos="fade-up"
             data-aos-duration="600"
-            className="lg:max-w-[800px] lg:max-auto text-headingColor font-[500] text-[16px] leading-7"
-          >
+            className="lg:max-w-[800px] lg:max-auto text-headingColor font-[500] text-[16px] leading-7">
             We help enterprises through custom business solutions and provide IT outsourcing services to companies with agility, quality, and commitment.
           </p>
         </div>
