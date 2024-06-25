@@ -9,14 +9,14 @@ const work = () =>{
                             HOW WE WORK
                         </h1>
                         <div className="block text-3xl md:text-2xl font-bold md:ml-8">
-                            <p className="text-black ">
+                            <p className="text-black  ">
                             WORKED WITH START-UPS AND
                             </p>
                             <p className="text-black">
                             MORE ESTABLISHED COMPANIES
                             </p>
-                            <p className="flex flex-row text-sm font-thin mt-8">We are Software Agency ,deliberately staying small to keep the quality of our team high</p>
-                            <p className="flex flex-row text-sm font-thin ">.This allow us to be picky about the clents and products we take on   </p>
+                            <p className="flex flex-row lg:font-normal text-sm font-thin mt-8">We are Software Agency ,deliberately staying small to keep the quality of our team high</p>
+                            <p className="flex flex-row lg:font-normal text-sm font-thin ">.This allow us to be picky about the clents and products we take on   </p>
                         </div>
                      <StepperWidget/>   
                     </div>
