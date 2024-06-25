@@ -1,6 +1,6 @@
 import React from "react";
 import Spline from "@splinetool/react-spline";
-import Header from "../Header";
+import Sidebar from "./sidebar";
 
 function Hero() {
   return (
@@ -13,7 +13,7 @@ function Hero() {
               Welcome to LogicTech
             </h1>
             <p className="text-xs md:text-sm">
-              At SoftTech Solutions, we're dedicated to transforming your
+             we're dedicated to transforming your
               digital aspirations into reality. With our innovative software
               solutions and cutting-edge technology expertise, we empower
               businesses to thrive in the digital age.
@@ -28,8 +28,10 @@ function Hero() {
                Contact Us!
               </span>
             </button>
+          
           </div>
         </div>
+
 
         {/* Text Content */}
         <div className="absolute top-6 left-1/2 transform -translate-x-1/2 text-white z-20 text-center">
@@ -37,6 +39,10 @@ function Hero() {
             TURN YOUR VISION INTO REALITY
           </h1>
           <p className="text-sm md:text-lg">Let's Start Building Together</p>
+        </div>
+
+        <div className="absolute top-16 right-4 text-white z-20 text-right">
+          <Sidebar/>
         </div>
 
         {/* Additional Text - Right */}

@@ -1,7 +1,6 @@
 import React from "react";
-import Virtual from "../../assets/virtual.png";
 import enhanced from "../../assets/enhanced.png";
-import info from "../../assets/info.png";
+
 
 function AboutPage() {
   return (
