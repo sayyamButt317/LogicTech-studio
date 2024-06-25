@@ -15,7 +15,8 @@ const work = () =>{
                             <p className="text-black">
                             MORE ESTABLISHED COMPANIES
                             </p>
-                            <p className="flex flex-row text-sm font-normal mt-8">We are Software Agency ,deliberately staying small to keep the quality of our team high .This allow us to be picky about the clents and products we take on   </p>
+                            <p className="flex flex-row text-sm font-thin mt-8">We are Software Agency ,deliberately staying small to keep the quality of our team high</p>
+                            <p className="flex flex-row text-sm font-thin ">.This allow us to be picky about the clents and products we take on   </p>
                         </div>
                      <StepperWidget/>   
                     </div>
