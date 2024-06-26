@@ -30,53 +30,59 @@ const Footer = () => {
           {/*-- Products section --*/}
           <div className="">
             <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Products
+              Quick Links
             </h6>
             <p className="mb-4">
               <a href="#!" className="text-white dark:text-neutral-200">
-                Angular
+                Home
               </a>
             </p>
             <p className="mb-4">
               <a href="#!" className="text-white dark:text-neutral-200">
-                React
+                Our Story 
               </a>
             </p>
             <p className="mb-4">
               <a href="#!" className="text-white dark:text-neutral-200">
-                Vue
+                What We do 
+              </a>
+            </p>
+            <p className="mb-4">
+              <a href="#!" className="text-white dark:text-neutral-200">
+              How We Work
               </a>
             </p>
             <p>
               <a href="#!" className="text-white dark:text-neutral-200">
-                Laravel
+               Contact
               </a>
             </p>
+            
           </div>
 
           {/*-- Useful links section --*/}
           <div className="">
             <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Useful links
+              Services
             </h6>
             <p className="mb-4">
               <a href="#!" className="text-white dark:text-neutral-200">
-                Pricing
+               Product Development
               </a>
             </p>
             <p className="mb-4">
               <a href="#!" className="text-white dark:text-neutral-200">
-                Settings
+                Application Modernisation
               </a>
             </p>
             <p className="mb-4">
               <a href="#!" className="text-white dark:text-neutral-200">
-                Orders
+                Devops & Platform
               </a>
             </p>
             <p>
               <a href="#!" className="text-white dark:text-neutral-200">
-                Help
+                Security & Compilance
               </a>
             </p>
           </div>

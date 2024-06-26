@@ -41,9 +41,12 @@ const Frameworks = () => {
   return (
     <div className='md:container md:mx-auto mt-10 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-100
 '>
-      <span className='mt-5 text-[2rem] font-serif font-semibold flex items-center justify-center '>
-        We are Offering these Technologies 
-      </span>
+<p className='mt-5 text-[1rem] text-red-600 font-serif font-semibold flex items-center justify-center '>
+       Tools & Technologies 
+      </p>
+      <p className='mt-5 text-[1rem] font-serif font-semibold flex items-center justify-center '>
+       Latest Tools and Technologies To Drive Innovation in Digital Solutions 
+      </p>
       <div 
       className='flex flex-wrap justify-center items-center gap-16 m-12'>
         {icons.map((icon,index) => (
