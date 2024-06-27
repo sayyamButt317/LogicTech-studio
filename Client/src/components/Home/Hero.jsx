@@ -9,7 +9,8 @@ function Hero() {
         {/* Company Title and Description */}
         <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white z-20">
           <div className="mx-auto max-w-md sm:ml-4 md:ml-14">
-            <h1 className="font-sans md:font-serif text-2xl md:text-4xl">
+            <h1 data-aos="fade-right"
+          data-aos-duration="600" className="font-sans md:font-serif text-2xl md:text-4xl">
               Welcome to LogicTech
             </h1>
             <p className="text-xs md:text-sm">

@@ -35,7 +35,7 @@ const Card = () => {
 
   return (
     <>
-    <div className="flex flex-wrap justify-center items-center gap-2 p-4
+    <div className="flex flex-wrap rounded-br-lg justify-center items-center gap-2 p-4
     ">
       {cards.map((card, index) => (
         <div

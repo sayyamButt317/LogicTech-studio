@@ -5,12 +5,13 @@ const Service = () => {
     <section id="service">
       <div className="container flex flex-col justify-center items-center lg:pt-4">
         <div className="text-center">
+        <span className="block text-blue-500 text-lg font-lg font-serif ">WHAT WE DO</span>
           <h2
             data-aos="fade-up"
             data-aos-duration="400"
-            className="text-headingColor font-[800] text-3xl mb-5 sm:text-xl"
+            className="text-sky-950 font-[800] text-2xl mb-5 "
           >
-            DRIVING YOUR DIGITAL TRANSFORMATION
+            OFFERS SIMPLE AND ELEGANT SOLUTION
           </h2>
           <p
             data-aos="fade-up"

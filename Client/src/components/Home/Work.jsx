@@ -11,8 +11,10 @@ const Work = () => {
           HOW WE WORK
         </h1>
         <div className="block text-3xl md:text-2xl font-bold md:ml-8">
-          <p className="text-black">WORKED WITH START-UPS AND</p>
-          <p className="text-black">MORE ESTABLISHED COMPANIES</p>
+          <p data-aos="fade-left"
+          data-aos-duration="600" className="text-black">WORKED WITH START-UPS AND</p>
+          <p  data-aos="fade-right"
+          data-aos-duration="600" className="text-black">MORE ESTABLISHED COMPANIES</p>
           <p className="flex flex-row text-sm font-thin mt-8">
             We are a Software Agency, deliberately staying small to keep the quality of our team high.
           </p>
@@ -31,7 +33,7 @@ const Work = () => {
       data-aos="fade-up"
       data-aos-duration="600"
       className="lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0">
-        <img src={ai} alt="" className="object-cover rounded-lg h-86 w-3/4 lg:w-full lg:h-[36rem]" />
+        <img src={ai} alt="" className="object-cover mt-6 rounded-lg h-86 w-3/4 lg:w-full lg:h-[36rem]" />
       </div>
     </div>
   );

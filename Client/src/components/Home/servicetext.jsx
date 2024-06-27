@@ -3,6 +3,7 @@ import React from "react";
 const serviceText = () =>{
     <div className="container flex flex-col justify-center items-center lg:pt-4">
     <div className="text-center">
+   
       <h2
         data-aos="fade-up"
         data-aos-duration="400"
