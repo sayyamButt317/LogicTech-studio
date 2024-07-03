@@ -4,8 +4,8 @@ import enhanced from "../../assets/enhanced.png";
 
 function AboutPage() {
   return (
-    <div className="w-full h-auto mt-5 md:mx-auto ">
-      <div className="flex flex-col md:flex-row bg-gray-900">
+    <div className="w-full h-auto bg-black md:mx-auto ">
+      <div className="flex flex-col md:flex-row ">
         <div data-aos="fade-left"  data-aos-duration="1400"
         className="flex flex-col md:flex-row mx-auto items-center justify-between">
            

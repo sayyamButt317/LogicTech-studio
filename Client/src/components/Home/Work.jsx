@@ -23,7 +23,7 @@ const Work = () => {
           </p>
         </div>
         <StepperWidget />
-        <button className="relative font-sans text-sm inline-flex ml-8 mt-8 items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text- rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-black dark:text-white">
+        <button className="relative font-sans inline-flex ml-8 mt-8 items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text- rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-black dark:text-white">
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md">
             HOW WE WORK
           </span>

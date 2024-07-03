@@ -1,67 +1,92 @@
 import React from "react";
 import web from "../../assets/AppDevelopment.gif";
-import Frontend from "../../assets/frontend.gif"
-import Desktop from "../../assets/Desktop.gif"
-import Game from "../../assets/game.gif"
+import Frontend from "../../assets/frontend.gif";
+import Desktop from "../../assets/Desktop.gif";
+import security from "../../assets/security.gif";
 
 const cards = [
   {
     image: Frontend,
+    height: "80",
+    width: "80",
     title: "Web Development",
     description:
-      "Build modern, responsive websites with cutting-edge technologies.",
+      "Product Development typically refers to all stages involved in bringing a product from concept or idea through market release and beyond.",
   },
   {
     image: web,
-    title: "App Development",
+    height: "80",
+    width: "80",
+    title: "Application Modernisation",
     description:
-      "Create powerful and efficient mobile applications for various platforms.",
+      "The practice of updating older software for newer computing approaches, including newer languages, frameworks, and infrastructure platforms.",
   },
   {
     image: Desktop,
-    title: "Desktop Development",
+    height: "80",
+    width: "80",
+    title: "DevOps & Platform",
     description:
-      "Develop robust desktop applications tailored to your business needs.",
+      "DevOps Platform empowers organizations to maximize the overall return on software development by delivering software faster and efficiently.",
   },
   {
-    image: Game,
-    title: "Game Development",
+    image: security,
+    height: "80",
+    width: "80",
+    title: "Security & Compliance",
     description:
-      "Design and develop engaging and immersive gaming experiences.",
+      "Security compliance management is the process of monitoring and assessing systems, devices, and networks to ensure they comply with regulatory requirements.",
   },
 ];
 
 const Card = () => {
-
   return (
-    <>
-    <div className="flex flex-wrap rounded-br-lg justify-center items-center gap-2 p-4
-    ">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          data-aos="fade-up"
-          data-aos-duration={(index + 1) * 700}
-          className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700"
-        >
-          <div className="flex items-center justify-center bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
-            <img src={card.image} height="80" width="80" alt="" />
-          </div>
-          <div className="px-5 pb-5">
-            <h5 className="text-sm font-ui-serif tracking-tight text-black-300 dark:text-black">
-              {card.description}
-            </h5>
-            <div className="flex items-center mt-2.5 mb-5"></div>
-            <div className="flex items-center justify-between">
-              <span className="text-lg font-bold text-gray-900 dark:text-black">
-                {card.title}
-              </span>
-             
+    <>   <div className="container flex flex-col justify-center items-center lg:pt-4">
+    <div className="text-center">
+    <span className="block text-blue-500 text-lg font-lg font-serif ">WHAT WE DO</span>
+      <h2
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="text-sky-950 font-[800] text-2xl mb-5 "
+      >
+        OFFERS SIMPLE AND ELEGANT SOLUTION
+      </h2>
+      <p
+        data-aos="fade-up"
+        data-aos-duration="600"
+        className="lg:max-w-[800px] lg:max-auto text-headingColor font-[500] text-[16px] leading-7"
+      >
+        We help enterprises through custom business solutions and provide IT outsourcing services to companies with agility, quality, and commitment.
+      </p>
+    </div>
+  </div>
+      <div className="flex flex-wrap justify-center items-center gap-4 p-4">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            data-aos="fade-up"
+            data-aos-duration={(index + 1) * 700}
+            className="w-72 flex flex-col bg-white border border-gray-200 rounded-lg shadow-lg"
+          >
+            <div className="flex flex-col items-center justify-center bg-white shadow-md rounded-t-lg">
+              <img
+                src={card.image}
+                style={{ height: `${card.height}px`, width: `${card.width}%` }}
+                alt=""
+                className="object-contain"
+              />
+              <div className="p-4 text-center">
+                <span className="text-lg font-bold text-gray-900">
+                  {card.title}
+                </span>
+                <h5 className="text-sm mt-2 font-ui-serif tracking-tight text-gray-600">
+                  {card.description}
+                </h5>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </>
   );
 };

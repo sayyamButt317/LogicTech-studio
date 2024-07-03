@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import speak from "../../assets/speak.png";
 
 const points = [
@@ -30,23 +31,51 @@ const points = [
 ];
 
 const WhyUs = () => {
+  const controls = useAnimation();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const sequence = async () => {
+      for (let i = 0; i <= activeIndex; i++) {
+        await controls.start({
+          opacity: 1,
+          y: 0,
+          transition: { delay: i * 0.3 }, // Stagger the animations
+        });
+      }
+    };
+
+    sequence();
+  }, [activeIndex, controls]);
+
+  useEffect(() => {
+    // Automatically cycle through points with a 3-second interval
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % points.length);
+    }, 3000);
+
+    return () => clearInterval(interval); // Clean up on unmount
+  }, []);
+
   return (
     <div className="mt-10">
-      <p className="container text-red-600 text-md">Why LogicTech</p>
-      <h1 data-aos="fade-left"
-          data-aos-duration="600"className="container flex flex-row md:max-md text-black text-4xl font-normal">
+      <p data-aos="fade-right" className="container text-red-600 text-md">Why LogicTech</p>
+      <h1 data-aos="fade-left" className="container flex flex-row md:max-md text-black text-4xl font-normal">
         Why LogicTech Studio Stands Out
       </h1>
-      <p data-aos="fade-right"
-          data-aos-duration="600" className="container flex flex-row md:max-md text-black text-4xl font-normal">
+      <p data-aos="fade-right" className="container flex flex-row md:max-md text-black text-4xl font-normal">
         As Your Premier Digital Partner?
       </p>
       <div className="flex flex-col lg:flex-row items-center justify-between p-6">
         <div className="flex flex-col lg:w-1/2">
           {points.map((point, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex items-center space-x-4 shadow-2xl mt-4 w-full rounded-lg bg-gray-100 p-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              className={`flex items-center space-x-4 shadow-2xl mt-4 w-full rounded-lg bg-gray-100 p-4 ${
+                activeIndex === index ? '' : 'opacity-50' // Dim inactive points
+              }`}
             >
               <div className="bg-black rounded-full h-10 w-10 flex items-center justify-center">
                 <span className="text-white font-bold">{point.number}</span>
@@ -57,12 +86,14 @@ const WhyUs = () => {
                 </span>
                 <span className="text-sm">{point.description}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} // Start hidden and slightly up
+          animate={{ opacity: 1, y: 0 }}   // Fade in and move up
+          transition={{ duration: 0.8, delay: 1 }} // 1-second delay
           data-aos="fade-up"
-          data-aos-duration="600"
           className="lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0"
         >
           <img
@@ -70,10 +101,11 @@ const WhyUs = () => {
             alt=""
             className="object-cover rounded-lg h-86 w-3/4 lg:w-full lg:h-[36rem]"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
+
 
 export default WhyUs;

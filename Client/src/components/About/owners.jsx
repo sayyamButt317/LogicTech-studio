@@ -39,10 +39,16 @@ const Card = () => {
           key={index}
           data-aos="fade-up"
           data-aos-duration={(index + 1) * 700}
-          className="max-w-xs md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700"
+          className="max-w-xs md:max-w-sm bg-white border rounded-lg shadow dark:bg-white"
         >
-          <div className="flex items-center justify-center bg-gray-400 rounded-t-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 h-48">
-            <img
+          <div className="flex items-center justify-center rounded-t-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 h-48">
+            
+          <div className="flex flex-wrap justify-center">
+  <div className="w-6/12 sm:w-4/12 px-4">
+    <img src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-4-470x470.png" alt="..." className="shadow-lg rounded-full max-w-full h-auto align-middle border-none" />
+  </div>
+</div>
+<img
               src={card.image}
               className="w-full h-full object-cover"
               alt=""

@@ -1,48 +1,19 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const Form = require("./model/Formmodel");
-
 const app = express();
-const port = process.env.PORT || 5000;
+const connectionDB = require( "../Server/Connection/connection");
+const config =require("dotenv");
 
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(cors());
 
-// MongoDB connection
-const dbURL =
-  "mongodb+srv://sayyambutt317:1234@logictech.bvyxt1p.mongodb.net/LogicTech";
-const connectDB = async () => {
-  await mongoose.connect(dbURL);
-  console.log(`Connect with MongoDB ${mongoose.connection.host}`);
-};
-connectDB();
-
-mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
-
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "MongoDB connection error:"));
-// db.once("open", () => {
-//   console.log("Connected to MongoDB",{dbURL});
+//environment variable configuration
+// config({
+//   path: "./.env",
 // });
 
-// Routes
-app.post("/save-form", async (req, res) => {
-  try {
-    const { username, email, phone, location, text } = req.body;
-    const newFormData = new Form({ username, email, phone, location, text });
-    await newFormData.save();
-    res.status(201).send("Form data saved successfully");
-  } catch (err) {
-    console.error("Error saving form data:", err);
-    res.status(500).send("Error saving form data");
-  }
-});
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+//connect mongodb and catch error
+connectionDB()
+  .then(
+    app.listen(process.env.Port || 8000, () => {
+      console.log(`Server running on port ${process.env.Port || 8000}`);
+    })
+  )
+  .catch((err) => console.log(`Mongo db connection failed `, err));

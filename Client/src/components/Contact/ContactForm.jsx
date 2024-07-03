@@ -50,7 +50,7 @@ const Map = () => {
     onSubmit={handleSubmit}
     className="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8"
   >
-    <h1 className="mb-5 text-xl font-bold">Get Your Response Today!</h1>
+    <h1 className="mb-5 text-xl font-bold">Contact Us</h1>
     <div className="container flex-col">
       {formFields.map((field, index) => (
         <div key={index} className="max-w-sm mx-auto mt-5">

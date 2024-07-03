@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect,useState, } from "react";
 import Aos from "aos";
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./Utils/Header";
+import Footer from "./Utils/Footer";
 import Home from "../src/pages/Home";
 import Service from "../src/pages/Service";
 import About from "../src/pages/About";
@@ -25,9 +25,10 @@ function App() {
       <Route path="*" element={<nOTFOUND/>}/>
     </Routes>
     
-    </div>
+    </div> 
 
-      <Footer />
+      <Footer /> 
+     
     </>
   );
 }
