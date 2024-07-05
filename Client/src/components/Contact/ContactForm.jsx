@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import Axios from "axios"; 
 
 const formFields = [
   { id: "username", label: "User name" },
@@ -18,30 +18,43 @@ const Map = () => {
     text: "",
   });
 
+    //Result if message was sent or not
+    const [result, setResult] = useState('');
+
+    //Status of while message is being sent
+    const [status, setStatus] = useState('Submit');
+
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data:", formData); 
+
+    setResult('');
+    setStatus('Sending...');
     try {
-      const res = await Axios.post("http://localhost:5000/save-form", formData, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+      const response = await Axios.post("http://localhost:5000/saveform", formData, {
+        headers: { 'Content-Type': 'application/json' }, 
       });
-      console.log("Form submitted:", res.data);
-      window.alert("Success Submitted");
+
+      setStatus('Submit');
+
+      if (response.data.status === 'success') { 
+        setResult('Message Sent!');
+        setFormData({ username: '', email: '', phone: '', location: '', text: '' }); // Reset all fields
+      } else if (response.data.status === 'fail') {
+        alert('Uh oh! Message failed to send.');
+      }
     } catch (error) {
-      console.error("Error submitting form:", error.response.data);
-      window.alert("Error");
+      console.error(error);
+      setStatus('Submit');
+      setResult(error);
     }
   };
-  
-  
+
 
   return (
     <>
@@ -81,14 +94,24 @@ const Map = () => {
           )}
         </div>
       ))}
-      <div className="flex justify-center">
-        <button
-          type="submit"
+      <div className="flex justify-center px-2">
+          <button type="submit" className="w-full px-20 sm:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5 mb-5">
+            {status} 
+          
+          </button>
+          <button
+          type="reset"
+          onClick={() => setFormData({ username: '', email: '', phone: '', location: '', text: '' })}
           className="w-full px-20 sm:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5 mb-5"
         >
-          Submit
+          Reset
         </button>
-      </div>
+        </div>
+        {result && (
+          <p className={result === 'Message Sent!' ? 'text-green-500' : 'text-red-500'}>
+            {result}
+          </p>
+        )}
     </div>
   </form>
 </div>

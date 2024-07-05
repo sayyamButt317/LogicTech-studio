@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const connectionDB = require( "../Server/Connection/connection");
-const config =require("dotenv");
+const {config} =require("dotenv");
 
 
-//environment variable configuration
-// config({
-//   path: "./.env",
-// });
+// //environment variable configuration
+config({
+  path: "./.env",
+});
 
 //connect mongodb and catch error
 connectionDB()

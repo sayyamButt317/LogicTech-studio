@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const connectionDB = async () => {
   try {
      await mongoose.connect(
-      `mongob+srv://${process.env.DB_USER}:${DB_NAME}`
+      `${process.env.MONGODB_URI}/${DB_NAME}`
     );
     console.log(
       `\n Connected to MongoDB! `

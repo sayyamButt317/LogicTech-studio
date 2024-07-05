@@ -19,5 +19,6 @@ app.use(cors());
 
 
 //Routes Decleration
-app.use("/api/v1/save-form", userRouter);
+// app.use("/api/v1/save-form", userRouter);
+app.use("/", userRouter);
 export { app };
