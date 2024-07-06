@@ -69,10 +69,13 @@ function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="absolute top-0 left-1/4 transform -translate-x-1/2 text-white z-20 text-center mt-8"
+        className="absolute top-0 left-1/3 transform -translate-x-1/2 text-white z-20 text-center mt-8"
       >
         <h1 className="font-sans md:font-serif text-2xl md:text-4xl font-bold mb-2">
           TURN YOUR VISION INTO REALITY
+        </h1>
+        <h1 className="font-sans md:font-serif text-2xl md:text-4xl font-bold mb-2">
+          REALITY
         </h1>
         <p className="text-sm md:text-lg">Let's Start Building Together</p>
       </motion.div>

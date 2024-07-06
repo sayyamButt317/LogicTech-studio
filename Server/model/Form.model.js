@@ -2,12 +2,12 @@ import mongoose from "mongoose";
 
 // Form schema
 const formSchema = new mongoose.Schema({
-  username: String,
-  email: String,
-  phone: String,
-  location: String,
-  text: String,
+  username: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: String, required: true },
+  location: { type: String, required: true },
+  text: { type: String, required: true },
 });
 
-const Form = mongoose.model("Form", formSchema); 
+const Form = mongoose.model("Form", formSchema);
 module.exports = Form;
