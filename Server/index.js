@@ -4,12 +4,12 @@ const connectionDB = require( "../Server/Connection/connection");
 const {config} =require("dotenv");
 
 
-// //environment variable configuration
+//environment variable configuration
 config({
   path: "./.env",
 });
 
-//connect mongodb and catch error
+//connect mongodb 
 connectionDB()
   .then(
     app.listen(process.env.Port || 8000, () => {
