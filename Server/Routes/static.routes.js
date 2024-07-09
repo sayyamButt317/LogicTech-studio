@@ -1,17 +1,21 @@
-import express from "express";
-const router = express.Router();
-const Form = require("../model/Form.model");
+import { Router } from "express";
+import { Form } from "../model/Form.model.js";
+
+const router = Router();
 
 router.get("/", (req, res) => {
   return res.send("home");
 });
+
 router.get("/services", (req, res) => {
   return res.send("services");
 });
+
 router.get("/about", (req, res) => {
   return res.send("about");
 });
-router.post("/saveform", async (req, res) => {
+
+router.post("/form", async (req, res) => {
   try {
     const newFormData = new Form(req.body);
     await newFormData.save();
@@ -22,4 +26,4 @@ router.post("/saveform", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
