@@ -12,7 +12,7 @@ app.use(
         methods: ["GET", "POST", "PUT", "DELETE"],
     })
   );
-  
+
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -21,5 +21,5 @@ app.use(cors());
 
 //Routes Decleration
 // app.use("/api/v1/save-form", userRouter);
-app.use("/", () => userRouter);
+app.use("/api/v1/", () => userRouter);
 export { app };
