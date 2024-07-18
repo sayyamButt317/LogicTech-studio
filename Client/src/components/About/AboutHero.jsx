@@ -1,36 +1,50 @@
 import React from "react";
-import enhanced from "../../assets/enhanced.png";
-
+import aboutbg from "../../assets/aboutbg.jpg";
+import {motion} from "framer-motion";
+import { useNavigate } from "react-router-dom"
 
 function AboutPage() {
-  return (
-    <div className="w-full h-auto bg-black md:mx-auto ">
-      <div className="flex flex-col md:flex-row ">
-        <div data-aos="fade-left"  data-aos-duration="1400"
-        className="flex flex-col md:flex-row mx-auto items-center justify-between">
-           
-          <span className="font-serif text-white text-4xl font-bold mb-4 md:w-1/2 md:px-10 text-center md:text-left">
-            Transforming Lives Through Technology
-            <p 
-           className="font-serif text-white text-[1rem] gap-3 font-light mt-10 px-4 justify-center">
-              For Start-ups, our business provides a comprehensive solution to streamline Operations,manage Projects, and Collaboration effectively. From task delegation to team Communication.
-             
-            </p>
-          </span>
-          
-    
-          <img
-            src={enhanced}
-            className="max-w-full h-auto md:w-1/2 mt-4 md:mt-0"
-            alt="Code GIF"
-          />
-          
+    const navigate = useNavigate();
+    return (
+        <div className="relative w-full py-16 text-center bg-cover bg-center h-screen"
+             style={{backgroundImage: `url(${aboutbg})`}}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-white text-center justify-between">
+                <motion.div
+                    initial={{opacity: 0, y: 20}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.8}}
+                    className="text-center "
+                >
+                    <h1 className="text-4xl font-medium md:text-4xl lg:text-5xl mb-4">
+                        Transforming Lives Through Technology
+                    </h1>
+                    <h1 className="text-4xl font-medium md:text-4xl lg:text-5xl mb-4">
+                        & Technology
+                    </h1>
+
+                </motion.div>
+                <div className="flex justify-center space-x-4 mt-4">
+                    <motion.button
+                        onClick={() => navigate('/Service')}
+                        whileHover={{scale: 1.1}}
+                        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full"
+                    >
+                        Explore Our Services
+                    </motion.button>
+                    <motion.button
+                        onClick={() => navigate('/Contact')}
+                        whileHover={{scale: 1.1}}
+                        className="bg-transparent border border-white text-white px-6 py-3 rounded-full"
+                    >
+                        Contact Us
+                    </motion.button>
+                </div>
+            </div>
+
         </div>
-        
-      </div>
-      
-    </div>
-  );
+    );
 }
 
 export default AboutPage;
+
+

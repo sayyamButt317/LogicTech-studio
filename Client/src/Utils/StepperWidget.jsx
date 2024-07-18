@@ -10,8 +10,8 @@ const StepperWidget = () => {
       for (let i = 0; i <= stepIndex; i++) {
         await controls.start({
           opacity: 1,
-          y: 0,
-          transition: { delay: i * 0.3 } // Stagger the animations
+          x: 0,
+          transition: { delay: i * 0.01 } // Stagger the animations
         });
       }
     };
@@ -28,44 +28,44 @@ const StepperWidget = () => {
   }, []);
 
   return (
-    <ol className="relative ml-10 mt-6 border-s border-gray-200">
-      {[
-        {
-          number: '01',
-          title: 'Feature / Function',
-          description: 'We meet Your Requirement',
-        },
-        {
-          number: '02',
-          title: 'Solution',
-          description: 'We solve your current problems',
-        },
-        {
-          number: '03',
-          title: 'Outcomes',
-          description: 'We enable your Future Results',
-        },
-      ].map((step, index) => (
-        <motion.li
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={controls}
-          className={`mb-10 ms-6 ${stepIndex < index ? 'text-gray-300' : ''}`}
-        >
-          <span
-            className={`absolute flex items-center justify-center w-12 h-12 bg-white rounded-full -start-4 ring-4 shadow-lg ${
-              stepIndex < index ? 'ring-gray-200' : 'ring-white'
-            }`}
-          >
-            {step.number}
-          </span>
-          <h3 className="font-bold text-xl leading-tight ml-6">
-            {step.title}
-          </h3>
-          <p className="text-sm ml-6">{step.description}</p>
-        </motion.li>
-      ))}
-    </ol>
+      <div className="flex ml-10 mt-6 border-l border-gray-200 pl-6">
+        {[
+          {
+            number: '01',
+            title: 'Feature / Function',
+            description: 'We meet Your Requirement',
+          },
+          {
+            number: '02',
+            title: 'Solution',
+            description: 'We solve your current problems',
+          },
+          {
+            number: '03',
+            title: 'Outcomes',
+            description: 'We enable your Future Results',
+          },
+        ].map((step, index) => (
+            <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                animate={controls}
+                className={`mb-10 mr-6 ${stepIndex < index ? 'text-gray-300' : ''}`}
+            >
+              <div className="flex items-center justify-center w-20 h-20 bg-white rounded-full ring-4 shadow-lg">
+            <span className={`text-xl font-bold ${stepIndex < index ? 'text-gray-400' : 'text-blue-700'}`}>
+              {step.number}
+            </span>
+              </div>
+              <div className="ml-4">
+                <h3 className="font-bold text-lg leading-tight">
+                  {step.title}
+                </h3>
+                <p className="text-sm">{step.description}</p>
+              </div>
+            </motion.div>
+        ))}
+      </div>
   );
 };
 

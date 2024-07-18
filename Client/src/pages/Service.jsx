@@ -1,7 +1,8 @@
 import React from 'react'
 import ServiceHero from "../components/Services/ServiceHero"
-import Servicelist from "../components/Services/servicelist"
-import ServiceText from "../components/Services/servicetext"
+import CompanyServices from "../components/Services/servicetext"
+import ServiceList from "../components/Services/servicelist";
+import Clients from '../components/Services/clients';
 
 
 
@@ -10,8 +11,9 @@ function Service() {
  <>
  
  <ServiceHero />
- <ServiceText />
- <Servicelist />
+ <ServiceList />
+     <CompanyServices/>
+     <Clients/>
  
 
  </>

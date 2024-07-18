@@ -25,5 +25,14 @@ router.post("/form", async (req, res) => {
     res.status(500).json({ status: "fail", error: err.message });
   }
 });
-
+// New endpoint to get all form data
+router.get("/form", async (req, res) => {
+  try {
+    const formData = await Form.find();
+    res.status(200).json({ status: "success", data: formData });
+  } catch (err) {
+    console.error("Error retrieving form data:", err);
+    res.status(500).json({ status: "fail", error: err.message });
+  }
+});
 export default router;
