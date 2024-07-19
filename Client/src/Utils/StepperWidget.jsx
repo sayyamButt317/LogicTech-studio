@@ -58,10 +58,10 @@ const StepperWidget = () => {
             </span>
               </div>
               <div className="ml-4">
-                <h3 className="font-bold text-lg leading-tight">
+                <h3 className="font-bold text-2xl leading-tight mt-6">
                   {step.title}
                 </h3>
-                <p className="text-sm">{step.description}</p>
+                <p className="text-lg">{step.description}</p>
               </div>
             </motion.div>
         ))}

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Form } from "../model/Form.model.js";
+import Form from "../model/Form.model.js";
 
 const router = Router();
 
@@ -25,6 +25,7 @@ router.post("/form", async (req, res) => {
     res.status(500).json({ status: "fail", error: err.message });
   }
 });
+
 // New endpoint to get all form data
 router.get("/form", async (req, res) => {
   try {
@@ -35,4 +36,5 @@ router.get("/form", async (req, res) => {
     res.status(500).json({ status: "fail", error: err.message });
   }
 });
+
 export default router;

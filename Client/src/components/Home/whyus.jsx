@@ -5,7 +5,7 @@ import questiongirl from "../../assets/questiongirl.jpg";
 const points = [
   {
     number: "01",
-    title: "ExpertTeam",
+    title: "Expert Team",
     description: "Our Diverse Team Delivers Custom Solutions",
   },
   {
@@ -26,7 +26,7 @@ const points = [
   {
     number: "05",
     title: "Client-Centric Approach",
-    description: "Personalized Support ,Exceeding Expectations",
+    description: "Personalized Support, Exceeding Expectations",
   },
 ];
 
@@ -58,50 +58,50 @@ const WhyUs = () => {
   }, []);
 
   return (
-      <div className="mt-10 ms-4">
-        <p data-aos="fade-right" className="block text-red-600 text-md">Why LogicTech</p>
-        <h1 data-aos="fade-left" className="block flex-row md:max-md text-black text-4xl font-normal">
-          Why LogicTech Studio Stands Out
-        </h1>
-        <p data-aos="fade-right" className="block flex-row md:max-md text-black text-4xl font-normal">
-          As Your Premier Digital Partner?
-        </p>
-        <div className="flex flex-col lg:flex-row items-center justify-between p-6">
-          <div className="flex flex-col lg:w-1/2">
-            {points.map((point, index) => (
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={controls}
-                    className={`flex items-center space-x-4 shadow-2xl mt-4 w-full rounded-lg bg-gray-100 p-4 ${
-                        activeIndex === index ? '' : 'opacity-50' // Dim inactive points
-                    }`}
-                >
-                  <div className="bg-black rounded-full h-10 w-10 flex items-center justify-center">
-                    <span className="text-white font-bold">{point.number}</span>
-                  </div>
-                  <div className="flex flex-col">
+    <div className="mt-10 ms-4">
+      <p data-aos="fade-right" className="block text-red-600 text-md">Why LogicTech</p>
+      <h1 data-aos="fade-left" className="block flex-row text-black text-3xl md:text-4xl font-normal">
+        Why TechLogic Stands Out
+      </h1>
+      <p data-aos="fade-right" className="block flex-row text-black text-2xl md:text-4xl font-normal">
+        As Your Premier Digital Partner?
+      </p>
+      <div className="flex flex-col lg:flex-row items-center justify-between p-6">
+        <div className="flex flex-col lg:w-1/2 w-full">
+          {points.map((point, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              className={`flex items-center space-x-4 shadow-2xl mt-4 w-full rounded-lg bg-gray-100 p-4 ${
+                activeIndex === index ? '' : 'opacity-50' // Dim inactive points
+              }`}
+            >
+              <div className="bg-black rounded-full h-10 w-10 flex items-center justify-center">
+                <span className="text-white font-bold">{point.number}</span>
+              </div>
+              <div className="flex flex-col">
                 <span className="font-sans text-lg font-semibold">
                   {point.title}
                 </span>
-                    <span className="text-sm">{point.description}</span>
-                  </div>
-                </motion.div>
-            ))}
-          </div>
-          <motion.div
-              initial={{ opacity: 0, y: 20 }} // Start hidden and slightly up
-              animate={{ opacity: 1, y: 0 }}   // Fade in and move up
-              transition={{ duration: 0.8, delay: 1 }} // 1-second delay
-              data-aos="fade-up"
-              className="lg:w-1/2 flex justify-center mt-10 lg:mt-0"
-          >
-            <div className="h-auto flex items-center">
-              <img className="rounded-full w-96 h-96 " src={questiongirl} alt="image description" />
-            </div>
-          </motion.div>
+                <span className="text-sm">{point.description}</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} // Start hidden and slightly up
+          animate={{ opacity: 1, y: 0 }}   // Fade in and move up
+          transition={{ duration: 0.8, delay: 1 }} // 1-second delay
+          data-aos="fade-up"
+          className="lg:w-1/2 w-full flex justify-center mt-10 lg:mt-0"
+        >
+          <div className="flex items-center w-72 h-72 md:w-96 md:h-96">
+            <img className="rounded-full w-full h-full object-cover" src={questiongirl} alt="Why LogicTech" />
+          </div>
+        </motion.div>
       </div>
+    </div>
   );
 };
 

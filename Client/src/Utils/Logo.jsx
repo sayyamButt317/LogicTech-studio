@@ -14,7 +14,7 @@ function Logo() {
         </svg>
       </span>
             <div>
-                <h2 className="text-white ">SAYBIT LIMITED</h2>
+                <h2 className="text-white ">TechLogic</h2>
             </div>
         </div>
     );

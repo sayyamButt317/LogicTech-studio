@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(
     cors({
-        origin: process.env.CORS_ORIGIN , // Default to localhost for development
+        origin: process.env.CORS_ORIGIN  || 'http://localhost:3000', // Default to localhost for development
         credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE"],
     })

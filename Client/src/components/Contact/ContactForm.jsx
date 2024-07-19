@@ -80,66 +80,70 @@ const ContactForm = () => {
   };
 
   return (
-      <div className="flex justify-evenly items-center h-screen">
-        <div className="w-1/3">
-          <h2 className="text-lg font-medium text-blue-400">We're here to help.</h2>
-          <p className="mt-2 text-4xl">Contact us today and let us know how we can assist you.</p>
-          <p className="mt-2 text-xl">
-            Looking To Find And Hire Great Talent. You are one step away to build your perfect product.
-          </p>
-          <ContactStepperWidget />
-        </div>
-        <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8">
-          <h1 className="mb-5 text-xl font-bold">Contact Us</h1>
-          <div className="container flex-col">
+    <div className="w-full px-4 py-8 bg-gray-100 min-h-screen flex flex-col items-center">
+      <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-8">
+        <h2 className="text-lg font-medium text-blue-400 text-center mb-4">We're here to help.</h2>
+        <p className="text-2xl md:text-3xl text-center mb-4">Contact us today and let us know how we can assist you.</p>
+        <p className="text-lg md:text-xl text-center mb-8">
+          Looking to find and hire great talent? You are one step away from building your perfect product.
+        </p>
+        <ContactStepperWidget />
+
+        <form onSubmit={handleSubmit} className="mt-8">
+          <h1 className="text-xl font-bold mb-4">Contact Us</h1>
+          <div className="space-y-4">
             {formFields.map((field) => (
-                <div key={field.id} className="max-w-sm mx-auto mt-5">
-                  <label htmlFor={field.id} className="block uppercase tracking-wide mb-2 text-sm font-medium text-gray-900 dark:text-black">
-                    {field.label}
-                  </label>
-                  {field.id === "text" ? (
-                      <textarea
-                          id={field.id}
-                          value={formData[field.id]}
-                          onChange={handleChange}
-                          rows={5}
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder={field.label}
-                      />
-                  ) : (
-                      <input
-                          type="text"
-                          id={field.id}
-                          value={formData[field.id]}
-                          onChange={handleChange}
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder={field.label}
-                      />
-                  )}
-                </div>
+              <div key={field.id}>
+                <label htmlFor={field.id} className="block text-sm font-medium text-gray-900 mb-2">
+                  {field.label}
+                </label>
+                {field.id === "text" ? (
+                  <textarea
+                    id={field.id}
+                    value={formData[field.id]}
+                    onChange={handleChange}
+                    rows={5}
+                    className="block w-full p-2.5 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder={field.label}
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    id={field.id}
+                    value={formData[field.id]}
+                    onChange={handleChange}
+                    className="block w-full p-2.5 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder={field.label}
+                  />
+                )}
+              </div>
             ))}
-            <div className="flex justify-center px-2">
-              <button type="submit" className="w-full px-20 sm:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5 mb-5">
+            <div className="flex flex-col md:flex-row justify-between gap-4 mt-6">
+              <button
+                type="submit"
+                className="w-full md:w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full"
+              >
                 {status}
               </button>
               <button
-                  type="reset"
-                  onClick={() => setFormData({
-                    username: "",
-                    email: "",
-                    phone: "",
-                    location: "",
-                    text: "",
-                  })}
-                  className="w-full px-20 sm:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5 mb-5 ml-5"
+                type="reset"
+                onClick={() => setFormData({
+                  username: "",
+                  email: "",
+                  phone: "",
+                  location: "",
+                  text: "",
+                })}
+                className="w-full md:w-1/2 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 rounded-full"
               >
                 Reset
               </button>
             </div>
-            {result && <p className={result === "Message Sent!" ? "text-green-500" : "text-red-500"}>{result}</p>}
+            {result && <p className={`text-center mt-4 ${result === "Message Sent!" ? "text-green-500" : "text-red-500"}`}>{result}</p>}
           </div>
         </form>
       </div>
+    </div>
   );
 };
 

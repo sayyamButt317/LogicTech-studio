@@ -6,19 +6,19 @@ const reviews = [
     username: "Imran Haider",
     designation: "Software Engineer",
     description:
-      "Working with LogicTech was a fantastic experience. They delivered top-quality software on time and exceeded our expectations in every way. I highly recommend their services to anyone in need of reliable and innovative tech solutions."
+      "Working with TechLogic was a fantastic experience. They delivered top-quality software on time and exceeded our expectations in every way. I highly recommend their services to anyone in need of reliable and innovative tech solutions."
   },
   {
     username: "Dr. Asif Ranjha",
     designation: "Healthcare Professional",
     description:
-      "The team at LogicTech was incredibly knowledgeable and professional. They helped us create a user-friendly application that has significantly improved our operations. Their attention to detail and commitment to excellence is unmatched."
+      "The team at TechLogic was incredibly knowledgeable and professional. They helped us create a user-friendly application that has significantly improved our operations. Their attention to detail and commitment to excellence is unmatched."
   },
   {
     username: "Nadeem Moen",
     designation: "Entrepreneur",
     description:
-      "LogicTech transformed our business idea into a successful digital product. Their expertise in software development and dedication to customer satisfaction is evident in the final product. We are extremely happy with their work and look forward to future collaborations."
+      "TechLogic transformed our business idea into a successful digital product. Their expertise in software development and dedication to customer satisfaction is evident in the final product. We are extremely happy with their work and look forward to future collaborations."
   }
 ];
 

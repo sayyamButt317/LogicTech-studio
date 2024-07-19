@@ -20,24 +20,24 @@ const ImagesList = [
 
 function ContactHero() {
     return (
-        <div className="w-full h-auto bg-black md:max-auto">
-            <div className="flex flex-col md:flex-col justify-between items-center">
-        <span className="text-4xl font-medium text-white ml-4 md:ml-8 mt-16 md:mt-20">
-          We've Got an entire team dedicated
-        </span>
-                <span className="text-4xl font-medium text-white ml-4 md:ml-8">
-          to supporting you & your business
-        </span>
-                <p className="flex flex-col text-md items-center text-white font-roboto mt-3 sm:text-sm">
-                    Get help 24/7, with our support team expert TODAY.
+        <div className="w-full bg-black py-12 px-4 md:px-8">
+            <div className="flex flex-col items-center text-center">
+                <span className="text-2xl md:text-4xl font-medium text-white mb-4 mt-20">
+                    We've Got an Entire Team Dedicated
+                </span>
+                <span className="text-2xl md:text-4xl font-medium text-white mb-4">
+                    to Supporting You & Your Business
+                </span>
+                <p className="text-base md:text-lg text-white mb-8">
+                    Get help 24/7, with our support team experts TODAY.
                 </p>
-                <div className="h-auto flex flex-row gap-3 items-center mt-16 mb-20 rounded-full">
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
                     {ImagesList.map((imageData, index) => (
                         <img
                             key={index}
                             src={imageData.image}
                             alt={imageData.alt}
-                            className="rounded-full w-96 h-96 "
+                            className="rounded-full w-32 h-32 md:w-48 md:h-48 object-cover"
                         />
                     ))}
                 </div>
