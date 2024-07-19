@@ -5,7 +5,6 @@ import AWS from "../../assets/aws.png";
 import Django from "../../assets/django.png";
 import Docker from "../../assets/docker.png";
 import Flutter from "../../assets/flutter.png";
-import Dotnet from "../../assets/dotnet.png";
 import Kotlin from "../../assets/kotlin.png";
 import Mongodb from "../../assets/mongodb.png";
 import Next from "../../assets/nextjs.png";
@@ -26,7 +25,6 @@ const icons = [
   { image: Next, width: 100 },
   { image: react, width: 100 },
   { image: Node, width: 100 },
-  { image: Dotnet, width: 50 },
   { image: Django, width: 50 },
   { image: Mongodb, width: 100 },
   { image: Docker, width: 100 },

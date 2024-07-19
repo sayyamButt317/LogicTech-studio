@@ -53,8 +53,10 @@ const ContactForm = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+        if (!response.ok) {
+          const errorData = await response.json(); // Try to get error details from the response
+          throw new Error(errorData.message || 'Network response was not ok'); // Use the backend error if available
+        }
 
       const data = await response.json();
 
@@ -73,9 +75,10 @@ const ContactForm = () => {
         setResult("Message failed to send.");
       }
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error('Error:', error.message); 
       setStatus("Submit");
-      setResult("An error occurred. Please try again.");
+      // Update result with more specific error information from the backend
+      setResult(error.message || "An error occurred. Please try again.");
     }
   };
 

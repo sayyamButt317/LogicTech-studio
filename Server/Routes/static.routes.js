@@ -19,14 +19,14 @@ router.post("/form", async (req, res) => {
   try {
     const newFormData = new Form(req.body);
     await newFormData.save();
-    res.status(201).json({ status: "success" });
+    res.status(201).json({ status: "success",data: result });
   } catch (err) {
     console.error("Error saving form data:", err);
     res.status(500).json({ status: "fail", error: err.message });
   }
 });
 
-// New endpoint to get all form data
+//  endpoint to get all form data
 router.get("/form", async (req, res) => {
   try {
     const formData = await Form.find();
