@@ -1,35 +1,41 @@
-import React from 'react';
+import React from "react";
 
-const Clients = () => {
+const Clients = () => {  // Renamed for clarity
     return (
-        <div className="text-center px-4 sm:px-6 lg:px-8 py-8">
-            <h1 className="text-3xl sm:text-4xl font-semibold mt-8">
-                Choose the Best Suitable Engagement Model
-            </h1>
-            <p className="text-base sm:text-lg mt-4">
-                Based on your business specifications & Project Requirements
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 mt-8">
-                <div className="w-full sm:w-1/2 lg:w-1/4 h-auto bg-orange-600 rounded-2xl p-4">
-                    <h1 className="text-xl sm:text-2xl font-semibold text-white py-4">
-                        Dedicated Hiring
-                    </h1>
-                    <p className="text-sm sm:text-base text-white">
-                        Build your own team by selecting, hiring, and managing highly skilled software developers and IT
-                        experts on a long-term basis. This model is intended to help you find and engage dedicated
-                        resources with the right expertise and cultural fit to ensure agile software development.
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-100">  
+            <div className="container mx-auto px-4 sm:px-8 lg:px-16"> 
+                <div className="text-center mb-8">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
+                        Choose the Best Engagement Model for Your Needs
+                    </h2> 
+                    <p className="text-base sm:text-lg mt-4 text-gray-600">
+                        Tailored to your business specifications and project requirements
                     </p>
                 </div>
-                <div className="w-full sm:w-1/2 lg:w-1/4 h-auto bg-orange-600 rounded-2xl p-4">
-                    <h1 className="text-xl sm:text-2xl font-semibold text-white py-4">
-                        Fixed Cost
-                    </h1>
-                    <p className="text-sm sm:text-base text-white">
-                        Our project-based model, usually at a fixed price, is specifically designed to provide you with the best-in-class software development experts. This model is intended to ensure a swift and reliable collaboration between a client and our IT specialists engaged in a specific project.
-                    </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"> 
+                    {/* Engagement Model 1 */}
+                    <div className="bg-orange-600 rounded-lg p-6 md:p-8 shadow-md">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+                            Dedicated Hiring
+                        </h3>
+                        <p className="text-sm sm:text-base text-white">
+                            Build your own team by selecting, hiring, and managing highly skilled software developers and IT experts on a long-term basis. This model ensures agile software development with resources that have the right expertise and cultural fit for your company.
+                        </p>
+                    </div>
+
+                    {/* Engagement Model 2 */}
+                    <div className="bg-orange-600 rounded-lg p-6 md:p-8 shadow-md">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+                            Fixed Cost
+                        </h3>
+                        <p className="text-sm sm:text-base text-white">
+                            Our project-based model, typically at a fixed price, provides you with top-tier software development experts. This model ensures swift and reliable collaboration between your team and our IT specialists dedicated to your specific project.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

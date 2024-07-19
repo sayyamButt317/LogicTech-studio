@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import questiongirl from "../../assets/questiongirl.jpg";
 
 const points = [
   {
     number: "01",
     title: "Expert Team",
-    description: "Our Diverse Team Delivers Custom Solutions",
+    description: "Our diverse team delivers custom solutions tailored to your specific needs.",
   },
   {
     number: "02",
     title: "Industry Leading",
-    description: "Achieve Industry Success With Our Proven Solution",
+    description: "Achieve industry success with our innovative and proven solutions.",
   },
   {
     number: "03",
     title: "Global Reach",
-    description: "Seamless Collaboration, Anywhere, Anytime",
+    description: "Collaborate seamlessly with our team, regardless of your location or time zone.",
   },
   {
     number: "04",
     title: "24/7 Customer Support",
-    description: "Your Satisfaction is Our Priority",
+    description: "We prioritize your satisfaction with round-the-clock customer support.",
   },
   {
     number: "05",
     title: "Client-Centric Approach",
-    description: "Personalized Support, Exceeding Expectations",
+    description: "Experience personalized support that consistently exceeds your expectations.",
   },
 ];
 
@@ -34,74 +34,81 @@ const WhyUs = () => {
   const controls = useAnimation();
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Staggered animation effect
   useEffect(() => {
     const sequence = async () => {
       for (let i = 0; i <= activeIndex; i++) {
         await controls.start({
           opacity: 1,
           y: 0,
-          transition: { delay: i * 0.3 }, // Stagger the animations
+          transition: { delay: i * 0.2 }, 
         });
       }
     };
-
     sequence();
   }, [activeIndex, controls]);
 
+  // Auto-cycling of points
   useEffect(() => {
-    // Automatically cycle through points with a 3-second interval
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % points.length);
-    }, 3000);
-
-    return () => clearInterval(interval); // Clean up on unmount
+    }, 5000); // Increased interval to 5 seconds for better readability
+    return () => clearInterval(interval); 
   }, []);
 
   return (
-    <div className="mt-10 ms-4">
-      <p data-aos="fade-right" className="block text-red-600 text-md">Why LogicTech</p>
-      <h1 data-aos="fade-left" className="block flex-row text-black text-3xl md:text-4xl font-normal">
-        Why TechLogic Stands Out
-      </h1>
-      <p data-aos="fade-right" className="block flex-row text-black text-2xl md:text-4xl font-normal">
-        As Your Premier Digital Partner?
-      </p>
-      <div className="flex flex-col lg:flex-row items-center justify-between p-6">
-        <div className="flex flex-col lg:w-1/2 w-full">
-          {points.map((point, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={controls}
-              className={`flex items-center space-x-4 shadow-2xl mt-4 w-full rounded-lg bg-gray-100 p-4 ${
-                activeIndex === index ? '' : 'opacity-50' // Dim inactive points
-              }`}
-            >
-              <div className="bg-black rounded-full h-10 w-10 flex items-center justify-center">
-                <span className="text-white font-bold">{point.number}</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-sans text-lg font-semibold">
-                  {point.title}
-                </span>
-                <span className="text-sm">{point.description}</span>
-              </div>
-            </motion.div>
-          ))}
+    <section className="py-12 md:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center mb-8">
+          <p className="text-red-600 text-md">Why TechLogic</p>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+            Why TechLogic Stands Out As Your Premier Digital Partner?
+          </h2>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} // Start hidden and slightly up
-          animate={{ opacity: 1, y: 0 }}   // Fade in and move up
-          transition={{ duration: 0.8, delay: 1 }} // 1-second delay
-          data-aos="fade-up"
-          className="lg:w-1/2 w-full flex justify-center mt-10 lg:mt-0"
-        >
-          <div className="flex items-center w-72 h-72 md:w-96 md:h-96">
-            <img className="rounded-full w-full h-full object-cover" src={questiongirl} alt="Why LogicTech" />
+
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          {/* Points List */}
+          <div className="lg:w-1/2">
+            <ul className="space-y-4">
+              {points.map((point, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={controls}
+                  className={`flex items-center space-x-4 p-4 rounded-md shadow-md ${
+                    activeIndex === index ? "bg-white" : "bg-gray-100 opacity-70"
+                  }`}
+                >
+                  <div className="bg-blue-500 rounded-full h-10 w-10 flex items-center justify-center">
+                    <span className="text-white font-bold">{point.number}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">{point.title}</h3>
+                    <p className="text-sm text-gray-600">{point.description}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
           </div>
-        </motion.div>
+
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="lg:w-1/2 flex justify-center"
+          >
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-xl">
+              <img 
+                src={questiongirl} 
+                alt="Why TechLogic" 
+                className="absolute inset-0 object-cover w-full h-full" 
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

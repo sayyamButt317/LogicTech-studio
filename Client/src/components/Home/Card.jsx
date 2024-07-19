@@ -44,7 +44,7 @@ const Card = () => {
       <>
         <div className="container flex flex-col justify-center items-center lg:pt-4">
           <div className="text-center">
-            <span className="block text-blue-500 text-lg font-lg font-serif">WHAT WE DO</span>
+            <span className="block text-blue-500 text-lg font-lg  font-serif">WHAT WE DO</span>
             <h2
                 data-aos="fade-up"
                 data-aos-duration="400"

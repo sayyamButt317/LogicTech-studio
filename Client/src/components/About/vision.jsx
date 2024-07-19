@@ -1,35 +1,55 @@
 import { FaLaptopCode, FaCloud, FaChartLine } from "react-icons/fa";
+import { motion } from 'framer-motion'; // Added for animation
 
 const Vision = () => {
-    return (
-        <div className="bg-gradient-to-r from-blue-950 to-blue-950 mx-auto mt-10 h-full w-full rounded-lg bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-100 p-6 flex items-center justify-center">
-            <div data-aos="fade-up" data-aos-duration="1200" className="text-center">
-                <h1 className="text-white text-2xl md:text-4xl mb-4">
-                    Vision
-                </h1>
-                <p className="text-white text-base md:text-lg leading-relaxed mb-8">
-                    Our vision is to excel in innovative technological developments and to
-                    set a benchmark of excellence in providing IT solutions for global
-                    clients.
-                </p>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-                    <div className="flex flex-col items-center">
-                        <FaCloud className="text-4xl text-orange-500 mb-2" />
-                        <span className="text-white text-lg md:text-2xl">Innovation</span>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <FaLaptopCode className="text-4xl text-green-500 mb-2" />
-                        <span className="text-white text-lg md:text-2xl">Collaboration</span>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <FaChartLine className="text-4xl text-blue-500 mb-2" />
-                        <span className="text-white text-lg md:text-2xl">Excellence</span>
-                    </div>
-                </div>
-                
-            </div>
+  return (
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-blue-950 to-blue-950 ">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="max-w-3xl mx-auto text-center"> 
+
+          {/* Heading */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-4"
+          >
+            Our Vision
+          </motion.h2>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-base sm:text-lg lg:text-xl text-white leading-relaxed mb-10"
+          >
+            We strive to be at the forefront of technological innovation, setting a benchmark for excellence in providing IT solutions to clients worldwide.
+          </motion.p>
+
+          {/* Values */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {[
+              { icon: FaCloud, color: "text-orange-500", title: "Innovation" },
+              { icon: FaLaptopCode, color: "text-green-500", title: "Collaboration" },
+              { icon: FaChartLine, color: "text-blue-500", title: "Excellence" },
+            ].map(({ icon: Icon, color, title }, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
+                className="flex flex-col items-center text-white p-4 rounded-lg shadow-md bg-gradient-to-br from-blue-800 to-blue-900"
+              >
+                <Icon className={`text-4xl ${color} mb-2`} />
+                <span className="text-lg sm:text-xl font-semibold">{title}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Vision;

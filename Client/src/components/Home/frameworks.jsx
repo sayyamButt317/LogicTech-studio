@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion"; // Added for animation
 import Angular from "../../assets/angular.png";
 import AWS from "../../assets/aws.png";
 import Django from "../../assets/django.png";
@@ -13,52 +14,62 @@ import Nginx from "../../assets/nginx.png";
 import Node from "../../assets/nodejs.png";
 import SQL from "../../assets/sql.svg";
 import Vue from "../../assets/vue.png";
-import Php from "../../assets/php.png";
 import Graph from "../../assets/graphql.png";
-import Ios from "../../assets/ios.png"
+import Ios from "../../assets/ios.png";
 
-const icons=[
-  {Image:Flutter ,width:100},
-  {Image:Kotlin ,width:100},
-  {Image:Ios ,width:50},
-  {Image:Angular,width:100},
-  {Image:Vue,width:50},
-  {Image:Next ,width:100},
-  {Image:react,width:100},
-  {Image:Node,width:100},
-  {Image:Dotnet ,width:50},
-  {Image:Django,width:50},
-  {Image:Mongodb,width:100},
-  {Image:Docker ,width:100},
-  {Image:AWS ,width:100},
-  {Image:Nginx ,width:100},
-  {Image:SQL ,width:100},
-  {Image:Php ,width:100},
-  {Image:Graph ,width:100},
+const icons = [
+  { image: Flutter, width: 100 },
+  { image: Kotlin, width: 100 },
+  { image: Ios, width: 50 },
+  { image: Angular, width: 100 },
+  { image: Vue, width: 50 },
+  { image: Next, width: 100 },
+  { image: react, width: 100 },
+  { image: Node, width: 100 },
+  { image: Dotnet, width: 50 },
+  { image: Django, width: 50 },
+  { image: Mongodb, width: 100 },
+  { image: Docker, width: 100 },
+  { image: AWS, width: 100 },
+  { image: Nginx, width: 100 },
+  { image: SQL, width: 100 },
+  { image: Graph, width: 100 },
 ];
 
 const Frameworks = () => {
   return (
-    <div className='md:container md:mx-auto mt-10 h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-100
-'>
-<p className='mt-5 text-[1rem] text-red-600 font-serif font-semibold flex items-center justify-center '>
-       Tools & Technologies 
-      </p>
-      <p className='mt-5 text-[1rem] font-serif font-semibold flex items-center justify-center '>
-       Latest Tools and Technologies To Drive Innovation in Digital Solutions 
-      </p>
-      <div 
-      className='flex flex-wrap justify-center items-center gap-16 m-12'>
-        {icons.map((icon,index) => (
-          <div key={index}
-          data-aos="fade-up"
-          data-aos-duration="400">
-            <img src={icon.Image} width={icon.width} className='h-auto' alt='' />
-          </div>
-        ))}
+    <section className="py-12 md:py-20 bg-gray-100">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Headings */}
+        <div className="text-center mb-8">
+          <p className="text-red-600 text-md font-serif font-semibold">
+            Tools & Technologies
+          </p>
+          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-gray-800">
+            Latest Tools and Technologies To Drive Innovation in Digital Solutions
+          </h2>
+        </div>
+
+        {/* Icon Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
+          {icons.map((icon, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1 }} // Add hover animation
+              className="flex flex-col items-center justify-center p-4 rounded-md shadow-md bg-white"
+            >
+              <img
+                src={icon.image}
+                width={icon.width}
+                height="auto"
+                alt={icon.image.split("/").pop().split(".")[0]} // Extract filename as alt text
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default Frameworks;

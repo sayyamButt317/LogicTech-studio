@@ -84,3 +84,44 @@ function ServiceList() {
 }
 
 export default ServiceList;
+
+
+
+// const Card = () =>{
+//   return (
+//     <div className="container flex flex-col space-y-4"> {/* Added space-y-4 for spacing */}
+//       {details.map((detail, i) => (
+//         <div key={i} className="card flex flex-col items-center">
+//           <img
+//             src={detail.Image}
+//             style={{ height: `${detail.height}px`, width: `${detail.width}%` }}
+//             alt=""
+//             className="object-contain mb-2" // Added margin-bottom
+//           />
+//           <span className="font-semibold text-lg">{detail.Name}</span>
+//           <p className="text-gray-600">{detail.price}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+
+const Card = () =>{
+  return (
+    <div className="container flex flex-col space-y-4"> 
+      {details.map((detail, i) => (
+        <div key={i} className="card flex flex-col items-center">
+          <img
+            src={detail.Image}
+            style={{ height: `${detail.height}px`, width: `${detail.width}%` }}
+            alt=""
+            className="object-contain mb-2" 
+          />
+          <span className="">{detail.Name}</span>
+          <p className="">{detail.price}</p>
+        </div>
+      ))}
+    </div>
+  );
+}

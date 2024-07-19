@@ -7,59 +7,45 @@ const Work = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col lg:flex-row items-start p-6">
-      {/* Text Content */}
-      <div className="lg:w-1/2 flex flex-col">
-        <h1 className="font-normal text-sky-400 text-lg md:text-xl ml-4 md:ml-8 mt-10 md:mt-20">
-          HOW WE WORK
-        </h1>
-        <div className="text-3xl md:text-2xl font-bold md:ml-8">
-          <p
-            data-aos="fade-left"
-            data-aos-duration="600"
-            className="text-black"
-          >
-            WORKED WITH START-UPS AND
-          </p>
-          <p
-            data-aos="fade-right"
-            data-aos-duration="600"
-            className="text-black"
-          >
-            MORE ESTABLISHED COMPANIES
-          </p>
-          <p className="flex flex-row text-base font-medium mt-8">
-            We are a Software Agency, deliberately staying small to keep the
-            quality of our team high.
-          </p>
-          <p className="flex flex-row text-base font-medium">
-            This allows us to be picky about the clients and products we take
-            on.
-          </p>
-        </div>
-        <motion.button
+    <section className="w-full py-10 md:py-20 bg-gray-100">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row items-start gap-10 md:gap-16">
+
+          {/* Text Content */}
+          <div className="lg:w-1/2 text-gray-800">
+            <h2 className="text-sky-400 text-sm font-medium mb-2">HOW WE WORK</h2>
+            <div className="space-y-2">
+              <h3  data-aos="fade-right"
+            data-aos-duration="600"  className="text-2xl md:text-3xl font-bold">WORKED WITH START-UPS AND</h3>
+              <h3  data-aos="fade-left"
+            data-aos-duration="600" className="text-2xl md:text-3xl font-bold">MORE ESTABLISHED COMPANIES</h3>
+            </div>
+            <p    data-aos="fade-left"
+            data-aos-duration="600" className="mt-6 text-base md:text-lg leading-relaxed">
+              We are a boutique software agency, intentionally staying small to maintain the exceptional quality of our team. This allows us to be selective about the clients and products we partner with. 
+            </p>
+            <p     data-aos="fade-left"
+            data-aos-duration="600" className="mt-4 text-base md:text-lg leading-relaxed">
+              We prioritize outcome-driven development and seek out companies we can truly help deliver a significant impact for their customers. 
+            </p>
+
+            {/* Button */}
+            <motion.button
               onClick={() => navigate("/About")}
               whileHover={{ scale: 1.1 }}
-              className="relative font-sans w-1/6 inline-flex ml-8 mt-8 items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-black dark:text-white"
-          >
-         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md">
-            HOW WE WORK
-          </span>
-        </motion.button>
-      </div>
+              className="mt-8 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md shadow-md hover:shadow-lg transition duration-200"
+            >
+              Learn More
+            </motion.button> 
+          </div>
 
-      {/* Stepper Widget */}
-      <div
-        data-aos="fade-up"
-        data-aos-duration="600"
-        className="lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0"
-      >
-      <div className="mt-10">
-        <StepperWidget />
+          {/* Stepper Widget */}
+          <div className="lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0">
+            <StepperWidget /> 
+          </div>
+        </div>
       </div>
-      
-      </div>
-    </div>
+    </section>
   );
 };
 
